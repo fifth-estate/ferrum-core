@@ -39,6 +39,7 @@ __thread
 
 /**
  * ^ _fe_auto(): Marks pointer for automatic clean-up
+ * > _t: pointer type
  **/
 #define _fe_auto(_t)                                                            \
 __attribute__((cleanup(_t##_free)))
@@ -46,6 +47,7 @@ __attribute__((cleanup(_t##_free)))
 
 /**
  * ^ _fe_likely(): Marks predicate as likely
+ * > _p: predicate
  **/
 #define _fe_likely(_p)                                                          \
 (__builtin_expect(!!(_p), 1))
@@ -53,6 +55,7 @@ __attribute__((cleanup(_t##_free)))
 
 /**
  * ^ _fe_unlikely(): Marks predicate as unlikely
+ * > _p: predicate
  **/
 #define _fe_unlikely(_p)                                                        \
 (__builtin_expect(!!(_p), 0))
