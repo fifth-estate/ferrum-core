@@ -3,13 +3,6 @@
 
 
 /**
- * Macro: _fe_auto()
- **/
-#define _fe_auto(_t)                                                            \
-__attribute__((cleanup(_t##_free)))
-
-
-/**
  * Macro: _fe_nonull
  **/
 #define _fe_nonull                                                              \
@@ -35,6 +28,13 @@ __attribute__((cold))
  **/
 #define _fe_pure                                                                \
 __attribute__((pure))
+
+
+/**
+ * Macro: _fe_auto()
+ **/
+#define _fe_auto(_t)                                                            \
+__attribute__((cleanup(_t##_free)))
 
 
 /**
